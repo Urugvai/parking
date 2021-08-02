@@ -16,7 +16,7 @@ fun maxCarsAtTheSameTimeIn(timeSlots: Array<Pair<Long, Long>>): Int {
             if (currentWindowSize > totalMaxCarsAtTheSameTime)
                 totalMaxCarsAtTheSameTime = currentWindowSize
         } else
-            while (!allIsCrossed(timeSlots.sliceArray(i - currentWindowSize until i)))
+            while (currentWindowSize > 1 && !allIsCrossed(timeSlots.sliceArray(i - currentWindowSize..i)))
                 currentWindowSize--
     }
 

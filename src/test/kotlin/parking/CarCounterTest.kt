@@ -37,3 +37,8 @@ fun `test max cars at the same time for no cars`() {
 fun `test max very fast cars at the same time`() {
     assertEquals(1, maxCarsAtTheSameTimeIn(arrayOf(1L to 1L, 3L to 3L)))
 }
+
+@Test
+fun `test with 3 crossing`() {
+    assertEquals(3, maxCarsAtTheSameTimeIn(arrayOf(1L to 3L, 1L to 2L, 3L to 10L, 7L to 9L, 7L to 11L)))
+}
